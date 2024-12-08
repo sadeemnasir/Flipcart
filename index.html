@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/d0435f8b02.js" crossorigin="anonymous"></script>
+    <title>Online Shopping Site for Mobiles</title>
+    <link rel="icon" href="flipkart-logo-transparent-png-download-0.png">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #e6e7e8;
+    }
+
+    .nav-bar {
+        height: 56px;
+        min-width: 1200px;
+        background-color: #2874f0;
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        /* position: fixed; */
+    }
+
+    .nav-logo {
+        width: 75px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+    }
+
+    .logo {
+        background-image: url("flipkart-plus_8d85f4.png");
+        width: 100%;
+        height: 20px;
+        background-size: cover;
+    }
+
+    .nav-logo p {
+        font-size: 11px;
+        color: #F0F0F0;
+        font-style: italic;
+        margin-top: -18px;
+    }
+
+    .plus-img {
+        height: 10px;
+        width: 10px;
+        margin-left: 3px;
+        margin-top: -18px
+    }
+
+    .p-img {
+        background-image: url("plus_aef861.png");
+        height: 10px;
+        width: 10px;
+        background-size: cover;
+    }
+
+    input {
+        height: 36px;
+        width: 30vw;
+        background-color: white;
+        border: none;
+        border-radius: 2px 0px 0px 2px;
+        padding: 0px 16px;
+        outline: none;
+    }
+
+    .search-bar {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-icon {
+        background-color: white;
+        height: 36px;
+        width: 41px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0px 2px 2px 0px;
+    }
+
+    .login {
+        width: 121px;
+        height: 30px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+    }
+
+    .login p {
+        color: #2874f0;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .become {
+        width: 124px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .become p {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .more {
+        width: 121px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .more p {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .arrow {
+        position: relative;
+        left: 6px;
+        top: 2px;
+        transition-timing-function: ease;
+        transition-duration: .2s;
+    }
+
+    .arrow:hover {
+        transform: rotate(180deg);
+    }
+
+    .more:hover p {
+        color: black;
+    }
+    .more:hover{
+        background-color: white;
+        border-radius: 5px;
+        height: 25px;
+        box-shadow: 0 0 40px rgb(113, 205, 255);
+    }
+
+    .drop-down {
+        background-color: #f8fcff;
+        position: absolute;
+        left: 0px;
+        top: 105%;
+        border-radius: 5px;
+        width: 200px;
+        display: none;
+        box-shadow: -4px 5px 10px -3px rgba(65,65,65,0.75);
+-webkit-box-shadow: -4px 5px 10px -3px rgba(65,65,65,0.75);
+-moz-box-shadow: -4px 5px 10px -3px rgba(65,65,65,0.75);
+    }
+
+    .dropitems {
+        padding: 12px 0px 12px 0px;
+        left: 30px;
+        position: relative;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        
+    }
+
+    .more:hover .drop-down {
+        display: block;
+
+    }
+
+    .cart {
+        height: 56px;
+        width: 62px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .cart p {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .panel {
+        min-width: 1200px;
+        height: 112px;
+        background-color: white;
+        display: flex;
+        gap: 60px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .itmes {
+        width: 64px;
+        height: 88px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .items:hover {
+        color: #2874f0;
+    }
+
+    .img-1 {
+        width: 64px;
+        height: 64px;
+        background-image: url("img-1.webp");
+        background-size: cover;
+    }
+
+    .img-2 {
+        width: 64px;
+        height: 64px;
+        background-image: url("img-2.webp");
+        background-size: cover;
+    }
+
+    .img-3 {
+        width: 64px;
+        height: 64px;
+        background-image: url("img-3.webp");
+        background-size: cover;
+    }
+
+    .img-4 {
+        width: 64px;
+        height: 64px;
+        background-image: url("img-4.webp");
+        background-size: cover;
+    }
+
+    .img-5 {
+        width: 64px;
+        height: 64px;
+        background-image: url("img-5.webp");
+        background-size: cover;
+    }
+
+    .img-6 {
+        width: 64px;
+        height: 64px;
+        background-image: url("img-6.webp");
+        background-size: cover;
+    }
+
+    .img-7 {
+        width: 64px;
+        height: 64px;
+        background-image: url("img-7.webp");
+        background-size: cover;
+    }
+
+    .img-8 {
+        width: 64px;
+        height: 64px;
+        background-image: url("img-8.webp");
+        background-size: cover;
+    }
+
+    .img-9 {
+        width: 64px;
+        height: 64px;
+        background-image: url("img-9.webp");
+        background-size: cover;
+    }
+
+    .items-p {
+        font-size: 14px;
+    }
+
+    .hero-section {
+        margin: 15px;
+        height: 280px;
+        min-width: 1200px;
+
+    }
+
+    .hero-img {
+        background-image: url("hero_image copy.jpg");
+        height: 280px;
+        min-width: 1200px;
+        background-size: cover;
+        background-color: rgb(108, 255, 152);
+        /* display: flex;
+        align-items: center; */
+    }
+
+    .buttons1 {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        float: left;
+    }
+
+    .buttons2 {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        float: right;
+    }
+
+    .button1 {
+        height: 88px;
+        width: 40px;
+        background-color: white;
+        border-radius: 0px 5px 5px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button2 {
+        height: 88px;
+        width: 40px;
+        background-color: white;
+        border-radius: 5px 0px 0px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .shop-section {
+        height: 885px;
+        min-width: 1200px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .panel1 {
+        height: 373px;
+        width: 100%;
+        margin: 0px 16px 0px 16px;
+        background-color: white;
+    }
+
+    .panel1-heading {
+        height: 80;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .panel1-heading p {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .box {
+        height: 264px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .box1,
+    .box2,
+    .box3,
+    .box4,
+    .box5,
+    .box6,
+    .box7 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 200px;
+        height: 252px;
+    }
+
+    .box1-img {
+        background-image: url("box1.png");
+        width: 200px;
+        height: 186px;
+        background-size: cover;
+    }
+
+    .tags {
+        height: 10px;
+        width: 182px;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-wrap: wrap;
+    }
+
+    .tags p {
+        font-size: 14px;
+    }
+
+    .box2-img {
+        background-image: url("box2.png");
+        width: 200px;
+        height: 186px;
+        background-size: cover;
+    }
+
+    .box3-img {
+        background-image: url("box3.webp");
+        width: 200px;
+        height: 186px;
+        background-size: cover;
+    }
+
+    .box4-img {
+        background-image: url("box4.png");
+        width: 200px;
+        height: 190px;
+        background-size: cover;
+    }
+
+    .box5-img {
+        background-image: url("box5.png");
+        width: 200px;
+        height: 190px;
+        background-size: cover;
+    }
+
+    .box6-img {
+        background-image: url("box6.png");
+        width: 200px;
+        height: 190px;
+        background-size: cover;
+    }
+
+    .box7-img {
+        background-image: url("box7.png");
+        width: 200px;
+        height: 190px;
+        background-size: cover;
+    }
+
+    .border {
+        border: 2px solid rgb(212, 212, 212);
+        border-radius: 5px;
+    }
+
+    .box8-img {
+        background-image: url("box8.webp");
+        width: 200px;
+        height: 124px;
+        background-size: cover;
+    }
+
+    .box9-img {
+        background-image: url("box9.webp");
+        width: 200px;
+        height: 124px;
+        background-size: cover;
+    }
+
+    .box10-img {
+        background-image: url("box10.webp");
+        width: 200px;
+        height: 200px;
+        background-size: contain;
+    }
+
+    .box11-img {
+        background-image: url("box11.webp");
+        width: 200px;
+        height: 124px;
+        background-size: cover;
+    }
+
+    .box12-img {
+        background-image: url("box12.webp");
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+    }
+
+    .box13-img {
+        background-image: url("box13.webp");
+        width: 200px;
+        height: 200px;
+        background-size: cover;
+    }
+
+    .box14-img {
+        background-image: url("box14.webp");
+        width: 130px;
+        height: 200px;
+        background-size: cover;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <div class="logo">
+                </div>
+                <p>Explore
+                <p style="color:#FFE500;"> Plus</p>
+                <div class="plus-img">
+                    <div class="p-img"></div>
+                </div>
+                </p>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Serach for products,brands and more">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass fa-lg" style="color: #2874f0;"></i>
+                </div>
+            </div>
+            <div class="login">
+                <p>Login</p>
+            </div>
+            <div class="become">
+                <p>Become a Seller</p>
+            </div>
+            <div class="more">
+                <p>More</p><i class="arrow" style="color: #fff;"></i>
+                <div class="drop-down">
+                    <div class="dropitems"> <i class="fa-regular fa-user" style="color: #000000;"></i>My Profiles</div>
+                    <div class="dropitems">Orders</div>
+                    <div class="dropitems">Wish</div>
+                    <div class="dropitems">Rewards</div>
+
+                </div>
+            </div>
+            <div class="cart"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+                <p>Cart</p>
+            </div>
+        </div>
+        <div class="panel">
+            <div class="items">
+                <div class="img-1"></div>
+                <p class="items-p">Grocery</p>
+            </div>
+            <div class="itmes">
+                <div class="img-2"></div>
+                <p class="items-p">Mobiles</p>
+            </div>
+            <div class="items">
+                <div class="img-3"></div>
+                <p class="items-p">Fashion</p>
+            </div>
+            <div class="items">
+                <div class="img-4"></div>
+                <p class="items-p">Electronics</p>
+            </div>
+            <div class="items">
+                <div class="img-5"></div>
+                <p class="items-p">Home & Furniture</p>
+            </div>
+            <div class="items">
+                <div class="img-6"></div>
+                <p class="items-p">Appliances</p>
+            </div>
+            <div class="items">
+                <div class="img-7"></div>
+                <p class="items-p">Travel</p>
+            </div>
+            <div class="items">
+                <div class="img-8"></div>
+                <p class="items-p">Beauty, Toys & More</p>
+            </div>
+            <div class="items">
+                <div class="img-9"></div>
+                <p class="items-p">Two Wheelers</p>
+            </div>
+        </div>
+    </header>
+    <div class="hero-section">
+        <div class="hero-img">
+            <div class="buttons1">
+                <div class="button1"><i class="fa-solid fa-chevron-left fa-sm" style="color: #8f8f8f;"></i></div>
+            </div>
+            <div class="buttons2">
+                <div class="button2"><i class="fa-solid fa-chevron-right fa-sm" style="color: #8f8f8f;"></i></div>
+            </div>
+        </div>
+    </div>
+    <div class="shop-section">
+        <div class="panel1">
+            <div class="panel1-heading">
+                <p>Best of Electronics</p>
+            </div>
+            <div class="box">
+                <div class="box1 border">
+                    <div class="box1-img"></div>
+                    <div class="tags">
+                        <p>Printers</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box2 border">
+                    <div class="box2-img"></div>
+                    <div class="tags">
+                        <p>Cameras</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box3 border">
+                    <div class="box3-img"></div>
+                    <div class="tags">
+                        <p>Monitors</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box4 border">
+                    <div class="box4-img"></div>
+                    <div class="tags">
+                        <p>Trimmer</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box5 border">
+                    <div class="box5-img"></div>
+                    <div class="tags">
+                        <p>Trimmer</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box6 border">
+                    <div class="box6-img"></div>
+                    <div class="tags">
+                        <p>Gyser</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box7 border">
+                    <div class="box7-img"></div>
+                    <div class="tags">
+                        <p>Speakers</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="panel1">
+            <div class="panel1-heading">
+                <p>Beauty, Food, Toys & more</p>
+            </div>
+            <div class="box">
+                <div class="box1 border">
+                    <div class="box8-img"></div>
+                    <div class="tags">
+                        <p>Printers</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box2 border">
+                    <div class="box9-img"></div>
+                    <div class="tags">
+                        <p>Cameras</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box3 border">
+                    <div class="box10-img"></div>
+                    <div class="tags">
+                        <p>Monitors</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box4 border">
+                    <div class="box11-img"></div>
+                    <div class="tags">
+                        <p>Trimmer</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box5 border">
+                    <div class="box12-img"></div>
+                    <div class="tags">
+                        <p>Trimmer</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box6 border">
+                    <div class="box13-img"></div>
+                    <div class="tags">
+                        <p>Gyser</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+                </div>
+                <div class="box7 border">
+                    <div class="box14-img"></div>
+                    <div class="tags">
+                        <p>Speakers</p>
+                    </div>
+                    <div class="tags">
+                        <p style="color:#388E3C ; font-size: 16px;">From $50</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
